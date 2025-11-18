@@ -1,5 +1,5 @@
 while (true) {
-        let num1 = prompt("Enter the first number:");
+     let num1 = prompt("Enter the first number:");
 
         let operation = prompt("Enter the operation (+, -, *, /):");  
 
@@ -25,18 +25,17 @@ while (true) {
                     
                     else if (isNaN(result)) {
                     alert("Invalid input");
-                    
                     }
 
                     else {
                     alert("Invalid operation");
-                    
                     }
                         
-    alert("The result is: " + result);
+        alert("The result is: " + result);
+
         let continueCalc = confirm("Do you want to perform another calculation? (yes/no):");
-                if (!continueCalc) {
-                    break;
-                }
-    }
+                    if (!continueCalc) {
+                        break;
+                    }
+} 
 

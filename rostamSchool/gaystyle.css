@@ -1,0 +1,67 @@
+.heroGaySection {
+  border: 5px solid rgba(36, 232, 150, 0.897);
+  margin: 20px;
+  padding: 5rem;
+  text-align: center;
+}
+
+.listOfGay {
+  border: 5px solid rgba(221, 20, 87, 0.897);
+  margin: 10px;
+  padding: 2rem;
+  text-align: left;
+}
+
+@keyframes popEffect {
+  0% {
+    transform: scale(1);
+    color: red;
+  }
+  10% {
+    transform: scale(1.8);
+    color: orange;
+  }
+  20% {
+    transform: scale(0.2);
+    color: yellow;
+  }
+  30% {
+    transform: scale(1.6);
+    color: green;
+  }
+  40% {
+    transform: scale(0.4);
+    color: blue;
+  }
+  50% {
+    transform: scale(1.4);
+    color: indigo;
+  }
+  60% {
+    transform: scale(0.6);
+    color: violet;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
+}
+
+.gayAnimation {
+  animation: popEffect 5s ease;
+}
+
+#myGayForm {
+  border: 5px dotted rgba(221, 20, 87, 0.897);
+  margin: 10px;
+  padding: 2rem;
+}
+
+#tomer {
+}

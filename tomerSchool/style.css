@@ -1,0 +1,210 @@
+:root {
+  --mainBackground: rgba(8, 1, 1, 0.945);
+  --playersColor: rgb(80, 0, 0);
+  --containerBackground: rgb(48, 0, 0);
+  --textHover: rgb(248, 247, 192);
+}
+body {
+  background-image: url("img/hellBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  font-family: "Metal Mania", cursive;
+}
+
+.header {
+  width: 35%;
+  height: 130px;
+  background-color: var(--containerBackground);
+  text-align: center;
+  color: black;
+  text-shadow: 2px 2px 5px var(--playersColor);
+  margin-bottom: 20px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0px 20px 15px black;
+}
+
+.container {
+  background-color: var(--containerBackground);
+  display: flex;
+  gap: 20px;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 4px;
+  box-shadow: 0px 20px 100px black;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 70%;
+  height: 40rem;
+}
+
+.cpuRoll {
+  text-align: center;
+  color: var(--playersColor);
+  background-color: black;
+  border-radius: 7px;
+  flex: 1;
+  padding: 10px;
+  height: 22rem;
+  box-shadow: 0px 12px 30px black;
+}
+
+.playerRoll {
+  text-align: center;
+  background-color: var(--playersColor);
+  border-radius: 7px;
+  flex: 1;
+  padding: 10px;
+  height: 22rem;
+  box-shadow: 0px 12px 30px black;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.demon {
+  width: 350px;
+  height: 350px;
+  background-image: url("img/demon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  animation: floatDemon 3s ease-in-out infinite;
+  gap: 20px;
+}
+@keyframes floatDemon {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.gamblero {
+  width: 350px;
+  height: 350px;
+  background-image: url("img/gamblero.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  animation: floatGamblero 5s ease-in-out infinite;
+  gap: 20px;
+}
+@keyframes floatGamblero {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+#rollButton {
+  font-family: "metal mania", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: var(--playersColor);
+  text-shadow: #000000 0px 0px 9px;
+  text-align: center;
+  border: 3px solid black;
+  background-color: rgb(80, 0, 0);
+  border-radius: 3px;
+  box-shadow: 0px 7px 20px black;
+  padding: 30px 60px;
+  margin: 10px;
+  transition: all 0.3 ease;
+}
+
+#rollButton:hover {
+  background-color: black;
+  transform: scale(1.1);
+  box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.8);
+}
+#rollButton:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes buttonScale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.7);
+  }
+}
+.diceResult img {
+  width: 100px;
+  height: 100px;
+  margin: 40px;
+}
+.dice-dropped {
+  opacity: 1;
+  animation: drop-and-bounce 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes drop-and-bounce {
+  0% {
+    opacity: 0;
+    scale: 2;
+  }
+  5% {
+    scale: 2;
+  }
+  10% {
+    scale: 1.8;
+  }
+  20% {
+    scale: 1.6;
+  }
+  30% {
+    scale: 1.4;
+  }
+  40% {
+    scale: 1.2;
+  }
+  50% {
+    scale: 1;
+  }
+  55% {
+    scale: 1.1;
+  }
+  60% {
+    scale: 1.2;
+  }
+  70% {
+    scale: 1.3;
+  }
+  75% {
+    scale: 1.4;
+  }
+  80% {
+    scale: 1.3;
+  }
+  90% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}

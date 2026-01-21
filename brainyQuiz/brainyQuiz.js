@@ -1,3 +1,6 @@
+const questionElement = document.getElementById("questionText");
+const answerOptionsContainer = document.getElementById("answerOptions");
+
 const questionOne = {
   question: "What is the capital of France?",
   options: [" A) Berlin", " B) Madrid", " C) Paris", " D) Rome"],
@@ -24,61 +27,60 @@ rerun = false;
 while (!rerun) {
   let score = 0;
 
-  for (let i = 0; i < quizQuestions.length; i++) {
-    console.log(i);
-    console.log(quizQuestions.length);
-    console.log(quizQuestions[i]);
+  let currentQuestionIndex = 0;
+  function displayQuestion() {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    answerOptionsContainer.innerHTML = "";
 
-    let currentQuestion = quizQuestions[i];
-    let userAswer = prompt(
-      currentQuestion.question + ": " + currentQuestion.options
-    );
-
-    console.log(currentQuestion);
-
-    while (
-      userAswer.toUpperCase() !== "A" &&
-      userAswer.toUpperCase() !== "B" &&
-      userAswer.toUpperCase() !== "C" &&
-      userAswer.toUpperCase() !== "D"
-    ) {
-      alert("Please enter a valid option: A, B, C, or D.");
-      userAswer = prompt(
-        currentQuestion.question + ": " + currentQuestion.options
-      );
-    }
-    if (currentQuestion === questionThree) {
-      if (userAswer.toUpperCase() === currentQuestion.answer) {
-        alert("Correct!");
-        score++;
-      } else if (userAswer.toUpperCase() === currentQuestion.altAnswer) {
-        alert("I mean it is correct but Who knows that?");
-        score++;
-      } else {
-        alert(
-          "Wrong! The correct answer was" +
-            " " +
-            currentQuestion.answer +
-            " " +
-            "or" +
-            " " +
-            currentQuestion.altAnswer +
-            "."
-        );
-      }
-    }
-    if (userAswer.toUpperCase() === currentQuestion.answer) {
-      alert("Correct!");
-      score++;
-    } else {
-      alert("Wrong! The correct answer was" + " " + currentQuestion.answer);
+    const options = currentQuestion.options;
+    for (const option of options) {
+      const button = document.createElement("button");
+      button.textContent = option;
+      answerOptionsContainer.appendChild(button);
+      button.addEventListener("click", () => {
+        console.log("User selected option: " + option);
+      });
     }
   }
 
-  console.log("we are outside the loop now");
+  ////if (currentQuestion === questionThree) {
+  //if (userAswer.toUpperCase() === currentQuestion.answer) {
+  // alert("Correct!");
+  //score++;
+  //} else if (userAswer.toUpperCase() === currentQuestion.altAnswer) {
+  // alert("I mean it is correct but Who knows that?");
+  //score++;
+  // } else {
+  // alert(
+  //  "Wrong! The correct answer was" +
+  //    " " +
+  //    currentQuestion.answer +
+  //    " " +
+  //   "or" +
+  //   " " +
+  //   currentQuestion.altAnswer +
+  //   "."
+  // );
+  // }
+  displayQuestion();
+  //if (
+  //userAswer.toUpperCase() === currentQuestion.answer &&
+  //currentQuestion !== questionThree;
+  //) {
+  //alert("Correct!");
+  //score++;
+  //} //else if (
+  //userAswer.toUpperCase() !== currentQuestion.answer &&
+  //currentQuestion !== questionThree;
+  //) {
+  //alert("Wrong! The correct answer was" + " " + currentQuestion.answer);
+  //}
+  //}
   alert("Quiz over! You scored " + score + " out of " + quizQuestions.length);
   if ((rerun = confirm("Do you want to retake the quiz? (yes/no):"))) {
     rerun = false;
+  } else {
+    rerun = true;
   }
-  break;
 }
